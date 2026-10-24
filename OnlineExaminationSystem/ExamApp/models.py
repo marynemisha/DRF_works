@@ -8,3 +8,7 @@ class QuestionsDb(models.Model):
     option_c=models.CharField(max_length=100)
     option_d=models.CharField(max_length=100)
     correct_answer=models.CharField(max_length=100)
+class SubmissionsDb(models.Model):
+    student_name=models.CharField(max_length=100)
+    question_id=models.IntegerField()
+    answer=models.CharField(max_length=100)

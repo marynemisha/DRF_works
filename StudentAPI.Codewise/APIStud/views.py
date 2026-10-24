@@ -54,7 +54,7 @@ class SubmissionListCreateView(APIView):
             SubmissionsDb.objects.create(**original)
             return Response(data=serializer_instance.data)
         else:
-            return Response(data=serializer_instance.errors)
+            return Response(data=serializer_instance.errors,status=400)
 
 class SubmissionRetrieveUpdateDelete(APIView):
     def get(self,request,pk):

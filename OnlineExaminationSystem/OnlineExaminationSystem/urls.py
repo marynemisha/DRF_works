@@ -21,4 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('questions/',views.QuestionListCreateView.as_view()),
     path('questions/<pk>/',views.QuestionsRetrieveUpdateDelete.as_view()),
+    path('submissions/',views.SubmissionListCreateView.as_view()),
+    path('submissions/<pk>/',views.SubmissionRetrieveUpdateDelete.as_view()),
+    path('submissions/<pk>/evaluate/',views.EvaluateSubmissionView.as_view())
 ]

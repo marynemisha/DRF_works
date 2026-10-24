@@ -18,5 +18,4 @@ class Student(models.Model):
 class SubmissionsDb(models.Model):
     name=models.CharField(max_length=100)
     description=models.TextField()
-    points=models.PositiveIntegerField()
     

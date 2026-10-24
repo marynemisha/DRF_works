@@ -9,7 +9,11 @@ class StudentSerializer(serializers.Serializer):
     email = serializers.EmailField(max_length=100)
     mark = serializers.IntegerField()
 class SubmissionSerializer(serializers.Serializer):
-    name=models.CharField(max_length=100)
-    description=models.TextField()
-    points=models.PositiveIntegerField()
-        
+    name=serializers.CharField(max_length=100)
+    description=serializers.CharField()
+
+    def validate(self,validated_data):
+        name=validated_data.get("name")
+        if not Student.objects.filter(name=name).exists():
+            raise serializers.ValidationError("student does not exist")
+        return validated_data

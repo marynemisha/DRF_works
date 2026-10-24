@@ -80,3 +80,45 @@ DELETE http://127.0.0.1:8000/questions/4/
 ###
 GET http://127.0.0.1:8000/questions/4/
 Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type: application/json
+
+{
+    "student_name": "Anu",
+    "question_id": 1,
+    "answer": "Programming Language"
+}
+
+
+###
+GET http://127.0.0.1:8000/submissions/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/submissions/1/
+Content-Type: application/json
+
+{
+    "student_name": "Anu",
+    "question_id": 1,
+    "answer": "Python"
+}
+
+
+###
+PUT http://127.0.0.1:8000/submissions/1/evaluate/
+Content-Type: application/json
+
+{
+    "answer": "Programming Language"
+}
+

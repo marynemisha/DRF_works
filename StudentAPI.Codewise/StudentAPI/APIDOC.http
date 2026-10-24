@@ -59,3 +59,39 @@ DELETE http://127.0.0.1:8000/students/3/
 ###
 GET http://127.0.0.1:8000/students/3/
 Accept: application/json
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept:application/json
+
+###
+POST http://127.0.0.1:8000/submissions/
+content-type:application/json
+
+{
+  "name":"Anu",
+  "description":"I am a BCA student"
+}
+
+###
+GET http://127.0.0.1:8000/submissions/1/
+Accept:application/json
+
+
+###
+PUT http://127.0.0.1:8000/submissions/1/
+content-type:application/json
+
+{
+  "name":"Anu",
+  "description":"I am a web developer"
+}
+
+###
+PUT http://127.0.0.1:8000/submissions/1/evaluate/
+Content-Type: application/json
+
+{
+  "name":"Anu k",
+  "description":"I am a web developer"
+}
