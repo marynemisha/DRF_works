@@ -1,0 +1,156 @@
+###
+GET http://127.0.0.1:8000/questions/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/questions/
+Content-type :application/json
+
+# {
+#     "title":"Factorial of a number",
+#     "language":"python",
+#     "difficulty_level":"easy",
+#     "topic":"For Loop",
+#     "score":5,
+#     "notes":"This is a simple implementation of factorial using for loop",
+#     "sample_input":5,
+#     "sample_output":120
+# }
+
+# {
+#     "title":"Prime number",
+#     "language":"python",
+#     "difficulty_level":"medium",
+#     "topic":"For Loop",
+#     "score":5,
+#     "notes":"This is a simple python program to check whether the given number is a prime or not using for loop",
+#     "sample_input":5,
+#     "sample_output":"prime number"
+# }
+
+# {
+#     "title": "Adding 2 numbers",
+#     "language": "python",
+#     "difficulty_level": "easy",
+#     "score": 5,
+#     "topic": "basics",
+#     "notes": "This is a simple python program to add two numbers",
+#     "published_date": "2026-10-14T03:48:32.073123Z",
+#     "sample_input": "5",
+#     "sample_output": "prime number",
+# }
+
+# {
+#     "title":"Even number",
+#     "language":"python",
+#     "difficulty_level":"medium",
+#     "topic":"For Loop",
+#     "score":5,
+#     "notes":"This is a simple python program to check whether the given number is an even or not using for loop",
+#     "sample_input":5,
+#     "sample_output":"not even"
+# }
+
+# {
+#     "title":"odd number",
+#     "language":"python",
+#     "difficulty_level":"medium",
+#     "topic":"For Loop",
+#     "score":5,
+#     "notes":"This is a simple python program to check whether the given number is a odd or not using for loop",
+#     "sample_input":9,
+#     "sample_output":"odd number"
+# }
+
+# {
+#     "title":"factorial using recursion",
+#     "language":"python",
+#     "difficulty_level":"easy",
+#     "topic":"For Loop",
+#     "score":5,
+#     "notes":"This is a simple python program to find factorial of give number using for recursion",
+#     "sample_input":5,
+#     "sample_output":"120"
+# }
+
+
+###
+GET http://127.0.0.1:8000/questions/1/
+Accept:application/json
+
+
+###
+GET http://127.0.0.1:8000/questions/3/
+Accept:application/json
+
+###
+PUT http://127.0.0.1:8000/questions/3/
+content-type:application/json
+
+{
+    "title": "Adding 2 numbers",
+    "language": "python",
+    "difficulty_level": "easy",
+    "score": 5,
+    "topic": "basics",
+    "notes": "This is a simple python program to add two numbers",
+    "sample_input": "5,2",
+    "sample_output": "7"
+}
+
+###
+DELETE http://127.0.0.1:8000/questions/4/
+
+
+###
+GET http://127.0.0.1:8000/questions/4/
+Accept: application/json
+
+
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept:application/json
+
+
+###
+POST http://127.0.0.1:8000/submissions/
+content-type:application/json
+
+{
+    "question_id":2,
+    "answer":"5 is a prime number",
+    "owner":"Anu"
+}
+
+
+###
+GET http://127.0.0.1:8000/submissions/1/
+Accept:application/json
+
+# ###
+# GET http://127.0.0.1:8000/submissions/10/
+# Accept:application/json
+#it will not display error and it displays
+# "detail": "No SubmissionsDb matches the given query."
+#if we use get_object_404
+#otherwise it displays error
+
+
+###
+PUT http://127.0.0.1:8000/submissions/1/
+Content-Type: application/json
+{
+    "question_id":2,
+    "answer":"7 is a prime number",
+    "owner":"Anu"
+}
+
+###
+PUT http://127.0.0.1:8000/submissions/1/evaluate/
+Content-Type: application/json
+
+{
+    "points":3,
+    "remarks":"Below average"
+}

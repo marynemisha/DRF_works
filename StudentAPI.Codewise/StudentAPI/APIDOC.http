@@ -1,0 +1,61 @@
+#api call for student details
+###
+GET http://127.0.0.1:8000/students/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/students/
+Content-Type: application/json
+
+# {
+#     "name": "Anu",
+#     "age": 21,
+#     "course": "BCA",
+#     "skills":"python",
+#     "email": "anu@gmail.com",
+#     "mark": 85
+# }
+
+# {
+#     "name": "Ammu",
+#     "age": 24,
+#     "course": "MCA",
+#     "skills":"python",
+#     "email": "ammu2@gmail.com",
+#     "mark": 75
+# }
+
+{
+    "name": "Dev",
+    "age": 26,
+    "course": "Btech",
+    "skills":"django",
+    "email": "dev123@gmail.com",
+    "mark": 90
+}
+
+###
+GET http://127.0.0.1:8000/students/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/students/1/
+Content-Type: application/json
+
+{
+    "name": "Anu",
+    "age": 22,
+    "course": "MCA",
+    "skills": "django",
+    "email": "anu@gmail.com",
+    "mark": 90
+}
+
+
+###
+DELETE http://127.0.0.1:8000/students/3/
+
+###
+GET http://127.0.0.1:8000/students/3/
+Accept: application/json

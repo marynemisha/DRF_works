@@ -1,0 +1,144 @@
+#api call for student details
+###
+GET http://127.0.0.1:8000/students/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/students/
+Content-Type: application/json
+
+# {
+#     "name": "Anu",
+#     "age": 21,
+#     "course": "BCA",
+#     "skills":"python",
+#     "email": "anu@gmail.com",
+#     "mark": 85
+# }
+
+# {
+#     "name": "Ammu",
+#     "age": 24,
+#     "course": "MCA",
+#     "skills":"python",
+#     "email": "ammu2@gmail.com",
+#     "mark": 75
+# }
+
+{
+    "name": "Dev",
+    "age": 26,
+    "course": "Btech",
+    "skills":"django",
+    "email": "dev123@gmail.com",
+    "mark": 90
+}
+
+###
+GET http://127.0.0.1:8000/students/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/students/1/
+Content-Type: application/json
+
+{
+    "name": "Anu",
+    "age": 22,
+    "course": "MCA",
+    "skills": "django",
+    "email": "anu@gmail.com",
+    "mark": 90
+}
+
+
+###
+DELETE http://127.0.0.1:8000/students/3/
+
+###
+GET http://127.0.0.1:8000/students/3/
+Accept: application/json
+
+
+
+###
+GET http://127.0.0.1:8000/assignment/
+Accept:application/json
+
+###
+POST http://127.0.0.1:8000/assignment/
+content-type:application/json
+
+# {
+#  "title": "Python Programming",
+#  "subject": "Python",
+#  "description": "Write a program to check whether a number is prime",
+#  "due_date": "2026-10-25T23:59:00Z",
+#  "marks": 10
+# }
+
+# {
+# "title": "Django REST API",
+# "subject": "Django",
+# "description": "Create an API to calculate the factorial of a number",
+# "due_date": "2026-10-30T18:00:00Z",
+# "marks": 15
+# }
+
+{
+"title": "HTML and CSS Portfolio",
+"subject": "Web Development",
+"description": "Design a personal portfolio website using HTML and CSS",
+"due_date": "2026-11-05T18:00:00Z",
+"marks": 20
+}
+
+###
+GET http://127.0.0.1:8000/assignments/1/
+Accept:application/json
+
+###
+PUT http://127.0.0.1:8000/assignments/1/
+content-type:application/json
+
+{
+ "title": "Python Portfolio",
+ "subject": "Web Development",
+ "description": "Design a personal portfolio website using HTML and CSS",
+ "due_date": "2026-11-05T18:00:00Z",
+ "marks": 20
+}
+
+###
+DELETE http://127.0.0.1:8000/assignments/3/
+
+###
+GET http://127.0.0.1:8000/assignments/3/
+Accept:application/json
+
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/submissions/ 
+Content-Type: application/json 
+ 
+{ 
+"student_id": 2, 
+"assignment_id": 1, 
+"answer":"factorial of 5 is 120", 
+"submit_date":"2026-11-05T18:00:00Z",
+"score": 10 
+} 
+ 
+# { 
+#  "student_id": 1, 
+#  "assignment_id": 1, 
+#  "answer":"factorial is 120", 
+#  "submit_date":"2026-11-05T18:00:00Z", 
+#  "score": 10 
+# } 
+

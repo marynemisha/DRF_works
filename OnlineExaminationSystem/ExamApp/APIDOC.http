@@ -1,0 +1,82 @@
+###
+GET http://127.0.0.1:8000/questions/
+Accept:application/json
+
+
+
+###
+POST http://127.0.0.1:8000/questions/
+Content-Type: application/json
+
+# {
+# "question": "What is Python?",
+# "option_a": "Programming Language",
+# "option_b": "Database",
+# "option_c": "Operating System",
+# "option_d": "Web Browser",
+# "correct_answer": "Programming Language"
+# }
+
+# {
+# "question": "What is Django?",
+# "option_a": "Python Web Framework",
+# "option_b": "Programming Language",
+# "option_c": "Database",
+# "option_d": "Operating System",
+# "correct_answer": "Python Web Framework"
+# }
+
+# {
+# "question": "Which keyword is used to define a function in Python?",
+# "option_a": "function",
+# "option_b": "def",
+# "option_c": "define",
+# "option_d": "fun",
+# "correct_answer": "def"
+# }
+
+# {
+# "question": "Which loop is used to iterate over a sequence?",
+# "option_a": "if",
+# "option_b": "while",
+# "option_c": "for",
+# "option_d": "switch",
+# "correct_answer": "for"
+# }
+
+{
+"question": "Which data type stores True or False?",
+"option_a": "int",
+"option_b": "str",
+"option_c": "list",
+"option_d": "boolean",
+"correct_answer": "boolean"
+}
+
+###
+GET http://127.0.0.1:8000/questions/1/
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/questions/3/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/questions/3/
+Content-Type: application/json
+
+{
+"question": "Which keyword is used to define a function in Python?",
+"option_a": "function",
+"option_b": "def",
+"option_c": "lambda",
+"option_d": "fun",
+"correct_answer": "def"
+}
+
+###
+DELETE http://127.0.0.1:8000/questions/4/
+
+###
+GET http://127.0.0.1:8000/questions/4/
+Accept: application/json

@@ -1,0 +1,31 @@
+from django.db import models
+
+# Create your models here.
+class Student(models.Model):
+    #name,age,course,skills,email,mark
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+    course=models.CharField(max_length=100)
+    SKILLS_CHOICES=(
+        ('python','Python'),
+        ('django','Django'),
+        ('html','HTML'),
+        ('react','React')
+    )
+    skills=models.CharField(max_length=500,choices=SKILLS_CHOICES)
+    email=models.EmailField(max_length=100)
+    mark=models.IntegerField()
+class AssignmentDb(models.Model):
+    title=models.CharField(max_length=100)
+    subject=models.CharField(max_length=100)
+    description=models.TextField()
+    due_date=models.DateTimeField()
+    marks=models.PositiveIntegerField(null=True)
+    is_active=models.BooleanField(default=True)
+class SubmissionDb(models.Model):
+    student_id=models.IntegerField()
+    assignment_id=models.IntegerField()
+    answer=models.TextField()
+    submit_date=models.DateTimeField()
+    score=models.PositiveIntegerField(null=True)
+    
